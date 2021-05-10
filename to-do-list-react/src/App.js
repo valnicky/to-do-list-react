@@ -1,12 +1,26 @@
 import './App.css';
 import { TodoList } from './components/TodoList';
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
 
+const KEY = 'todoApp.todos';
+
 export function App() {
-  const [todos, setTodos]= useState([ {id:1,  task: 'Tarea 1',  completed: false}]);
+  const [todos,  setTodos] =  useState([ {id:1,  task: 'Tarea 1',  completed: false }, ]);
   
   const todoTaskRef = useRef();
+  
+  useEffect(()=> {
+    const storedTodos = JSON.parse(localStorage.getItem(KEY));
+    if(storedTodos){
+      setTodos(storedTodos);
+    }
+  }, []);
+  
+  useEffect(()=> {
+   localStorage.setItem(KEY,  JSON.stringify(todos));
+    }  , [todos]
+  );
   
   const toggleTodo = (id)=>{
     const newTodos = [...todos];
@@ -38,7 +52,7 @@ export function App() {
   
   return (
     <>
-    <TodoList todos = {todos} toggleTodo={toggleTodo}/>
+    <TodoList todos = {todos} toggleTodo={toggleTodo} />
     <input ref={todoTaskRef} type="text" placeholder="Nueva tarea"/>
     <button onClick={handleTodoAdd}>➕</button>
     <button onClick={handleClearAll}>🗑</button>
