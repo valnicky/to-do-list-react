@@ -2,6 +2,7 @@ $bg-color: #9DA993;
 $maron: #BCA88E;
 $rose: #E4B4B4;
 $gray: #E3E8E9;
+$white: #ffffff;
 body {
     background-color: $bg-color;
     color: $gray;
@@ -40,14 +41,30 @@ body {
 
 input {
     background-color: $rose;
-    color: $gray;
+    border: 1px solid $gray;
+    padding: 3px 5px;
 }
 
-::placeholder {
-    color: $gray;
+ ::placeholder {
+    font-weight: 700;
+    color: $white;
+    padding-left: 5px;
+}
+
+ul {
+    padding: 15px;
+    width: 550px;
+    border-radius: 15px;
+    border: 2px solid $gray;
+    li {
+        color: $white;
+        list-style: none;
+    }
 }
 
 button {
+    border: 1px solid $gray;
+    margin-left: 5px;
     background-color: $maron;
     color: $gray;
     margin-bottom: 15px;
