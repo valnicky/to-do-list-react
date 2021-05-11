@@ -5,6 +5,7 @@ $gray: #E3E8E9;
 body {
     background-color: $bg-color;
     color: $gray;
+    padding: 10%;
 }
 
 .App {
@@ -35,6 +36,21 @@ body {
 
 .App-link {
     color: #61dafb;
+}
+
+input {
+    background-color: $rose;
+    color: $gray;
+}
+
+::placeholder {
+    color: $gray;
+}
+
+button {
+    background-color: $maron;
+    color: $gray;
+    margin-bottom: 15px;
 }
 
 @keyframes App-logo-spin {
