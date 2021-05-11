@@ -40,7 +40,7 @@ export function App() {
       return [...prevTodos, {id: uuidv4(), task, completed : false}];
     });
     
-  /*  {todoTaskRef.current.value = null;}*/
+  todoTaskRef.current.value = null;
   }
   
   const handleClearAll = ()=>{
