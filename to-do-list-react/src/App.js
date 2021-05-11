@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.scss';
 import { TodoList } from './components/TodoList';
 import React, {useState, useRef, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
